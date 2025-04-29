@@ -34,3 +34,8 @@ Run this command to copy `.bashrc` to your home directory:
 ```
 wget -P ~ https://raw.githubusercontent.com/starkindustries/dotfiles/refs/heads/main/.bashrc
 ```
+
+Remember to source the file:
+```
+source ~/.bashrc
+```
