@@ -29,3 +29,6 @@ if "$enable_color_prompt"; then
 else
     PS1='[\u@\h \W]\$ '
 fi
+
+# Use vi key bindings
+set -o vi
