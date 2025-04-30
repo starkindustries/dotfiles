@@ -65,3 +65,12 @@ Remember to source the file:
 ```
 source ~/.bashrc
 ```
+
+## Arch Setup Script
+
+Copy the setup script to your home directory with this command:
+```
+wget -P ~ https://raw.githubusercontent.com/starkindustries/dotfiles/refs/heads/main/archsetup.sh
+```
+
+Review and run the setup script to install the bare necessities.
