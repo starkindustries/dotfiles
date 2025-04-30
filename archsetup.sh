@@ -15,7 +15,7 @@ fi
 
 # --- Install Basic Utilities ---
 echo "Installing basic utilities..."
-sudo pacman -S --noconfirm tmux less tree git github-cli npm vim
+sudo pacman -S --noconfirm tmux less tree git github-cli npm vim hyprlock
 echo "Basic utilities installed."
 echo
 
