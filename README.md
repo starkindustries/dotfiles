@@ -11,7 +11,7 @@ wget -P ~ https://raw.githubusercontent.com/starkindustries/dotfiles/refs/heads/
 
 Run this command to copy `hyperland.conf` to `~/.config/hypr` directory:
 ```
-wget -P ~/.config/hypr https://raw.githubusercontent.com/starkindustries/dotfiles/refs/heads/main/hyprland.conf
+wget -P ~/.config/hypr https://raw.githubusercontent.com/starkindustries/dotfiles/refs/heads/main/.config/hypr/hyprland.conf
 ```
 
 Diff between this and the default config:
