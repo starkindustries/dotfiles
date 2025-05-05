@@ -74,3 +74,5 @@ wget -P ~ https://raw.githubusercontent.com/starkindustries/dotfiles/refs/heads/
 ```
 
 Review and run the setup script to install the bare necessities.
+
+Note: to setup bluetooth, see this wiki page: https://wiki.archlinux.org/title/Bluetooth_headset.
