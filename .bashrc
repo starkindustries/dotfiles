@@ -13,6 +13,9 @@ alias ll='ls -lah --color=auto'
 alias grep='grep --color=auto'
 alias wlcopy='wl-copy'
 alias gits='git status'
+alias firefox='nohup firefox > /dev/null 2>&1 &'
+alias lock='hyprlock'
+alias audio='pavucontrol'
 
 # Add a boolean variable to enable/disable color prompt
 # Set to true to enable, false to disable
