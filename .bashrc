@@ -16,6 +16,7 @@ alias gits='git status'
 alias firefox='nohup firefox > /dev/null 2>&1 &'
 alias lock='hyprlock'
 alias audio='pavucontrol'
+alias blue='bluetoothctl'
 
 # Add a boolean variable to enable/disable color prompt
 # Set to true to enable, false to disable
