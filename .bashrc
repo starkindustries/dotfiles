@@ -17,11 +17,25 @@ alias firefox='nohup firefox > /dev/null 2>&1 &'
 alias lock='hyprlock'
 alias blue='bluetoothctl'
 
+# *************************
 # Custom Audio Controls
+# *************************
+
+# Note: view audio sinks with `pactl list sinks short`
+set_default_sink() {
+    local audio_type="$1"
+    local sink_number=$(pactl list sinks short | grep "$audio_type" | awk '{print $1}')
+    if [[ -z "$sink_number" ]]; then
+        echo "Error: No sink found for type: $audio_type"
+        return 1
+    fi
+    pactl set-default-sink "$sink_number"
+    echo "Default sink set to $audio_type (sink number: $sink_number)"
+}
+
 alias audio='pavucontrol'
-# View audio sinks with `pactl list sinks short`
-alias audio-hdmi='pactl set-default-sink 24' # Set sound to HDMI (monitor)
-alias audio-blue='pactl set-default-sink 27' # Set sound to bluetooth
+alias audio-hdmi='set_default_sink hdmi'
+alias audio-blue='set_default_sink blue'
 
 # Add a boolean variable to enable/disable color prompt
 enable_color_prompt=true
