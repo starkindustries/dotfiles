@@ -15,11 +15,15 @@ alias wlcopy='wl-copy'
 alias gits='git status'
 alias firefox='nohup firefox > /dev/null 2>&1 &'
 alias lock='hyprlock'
-alias audio='pavucontrol'
 alias blue='bluetoothctl'
 
+# Custom Audio Controls
+alias audio='pavucontrol'
+# View audio sinks with `pactl list sinks short`
+alias audio-hdmi='pactl set-default-sink 24' # Set sound to HDMI (monitor)
+alias audio-blue='pactl set-default-sink 27' # Set sound to bluetooth
+
 # Add a boolean variable to enable/disable color prompt
-# Set to true to enable, false to disable
 enable_color_prompt=true
 
 # Define ANSI color code variables
@@ -36,3 +40,8 @@ fi
 
 # Use vi key bindings
 set -o vi
+
+# Keep these lines only if you need to use NVM (node version manager)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
