@@ -33,9 +33,10 @@ echo "pavucontrol installed. Run 'pavucontrol' to configure audio."
 echo
 
 # --- Install Fonts ---
+# https://unix.stackexchange.com/questions/685690/arch-linux-find-missing-fonts-and-installing-them
 echo "Installing essential fonts..."
-sudo pacman -S --noconfirm noto-fonts ttf-roboto
-echo "Noto Fonts and Roboto installed."
+sudo pacman -S --noconfirm noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+echo "Essential fonts installed."
 echo
 
 # --- Install FUSE (for AppImage support) ---
