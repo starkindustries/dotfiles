@@ -32,6 +32,12 @@ sudo pacman -S --noconfirm pavucontrol
 echo "pavucontrol installed. Run 'pavucontrol' to configure audio."
 echo
 
+# --- Install SwayOSD (on-screen display) ---
+echo "Installing SwayOSD (on-screen display)..."
+yay -S swayosd
+echo "SwayOSD installed."
+echo
+
 # --- Install Fonts ---
 # https://unix.stackexchange.com/questions/685690/arch-linux-find-missing-fonts-and-installing-them
 echo "Installing essential fonts..."
