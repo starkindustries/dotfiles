@@ -15,7 +15,7 @@ fi
 
 # --- Install Basic Utilities ---
 echo "Installing basic utilities..."
-sudo pacman -S --noconfirm tmux less tree git github-cli npm vim hyprlock hypridle
+sudo pacman -S --noconfirm tmux less tree git github-cli npm vim hyprlock hypridle zsh
 echo "Basic utilities installed."
 echo
 
@@ -62,6 +62,13 @@ echo "Installing wl-clipboard (Wayland clipboard)..."
 sudo pacman -S --noconfirm wl-clipboard
 echo "wl-clipboard installed. Essential for Wayland users."
 echo
+
+# --- Change default shell to zshell ---
+echo "Changing default shell to zsh.."
+chsh -s /usr/bin/zsh
+echo "Default shell changed. Logout/login to update."
+echo
+
 
 echo
 echo "---------------------------------------------------------"
