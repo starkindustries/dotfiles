@@ -15,7 +15,29 @@ alias wlcopy='wl-copy'
 alias gits='git status'
 alias firefox='nohup firefox > /dev/null 2>&1 &'
 alias lock='hyprlock'
-alias blue='bluetoothctl'
+alias bluetooth='bluetoothctl'
+alias jbl='bluetoothctl connect C8:2B:6B:10:4D:60 && sleep 2 && sink blue'
+alias sony='bluetoothctl connect 80:99:E7:75:0A:DA && sleep 2 && sink blue'
+alias logout='hyprctl dispatch exit'
+alias shot='hyprshot -m region --clipboard-only'
+
+# *************************
+# Git Wrapper Functions
+# *************************
+
+# Git commit shortcut
+gitc() {
+  msg="Update at $(date '+%Y-%m-%d %H:%M:%S')"
+  if [ -z "$1" ]; then
+    echo "No parameter provided - defaulting to: \"$msg\""
+    git commit -m "$msg" && git push
+  elif [ "$1" = "--commit-all" ]; then
+    echo "Committing all changes - defaulting to: \"$msg\""
+    git commit -am "$msg" && git push
+  else
+    git commit -m "$1" && git push
+  fi
+}
 
 # *************************
 # Custom Audio Controls
@@ -33,9 +55,18 @@ set_default_sink() {
     echo "Default sink set to $audio_type (sink number: $sink_number)"
 }
 
+# Note: set the audio sink with this function. Here are some
+# example commands: `sink blue` or `sink hdmi`
+sink() {
+    local target="$1"
+    if [[ -z "$target" ]]; then
+        echo "Error: no target provided, e.g. 'blue' or 'hdmi'"
+        return 1
+    fi
+    set_default_sink $target 
+}
+
 alias audio='pavucontrol'
-alias audio-hdmi='set_default_sink hdmi'
-alias audio-blue='set_default_sink blue'
 
 # Add a boolean variable to enable/disable color prompt
 enable_color_prompt=true
@@ -59,3 +90,19 @@ set -o vi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Update PATH
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/android-studio/bin"
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH="$PATH:$ANDROID_HOME/emulator"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+export PATH="$PATH:$HOME/.local/watchman-v2025.05.26.00-linux/bin"
+
+# Set Hyprshot Screenshot Directory
+# https://github.com/Gustash/Hyprshot
+HYPRSHOT_DIR=~/screenshots
+
+neofetch
+
+echo "Reminder: If you feel the urge to scroll, shift your focus towards a creative goal"
