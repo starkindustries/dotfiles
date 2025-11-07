@@ -100,6 +100,7 @@
   environment.systemPackages = with pkgs; [
     neofetch
     vim # Note, the Nano editor is also installed by default.
+    file
     wget
     git
     gh # github
