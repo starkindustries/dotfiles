@@ -101,6 +101,7 @@
     neofetch
     vim # Note, the Nano editor is also installed by default.
     file
+    tree
     wget
     git
     gh # github
