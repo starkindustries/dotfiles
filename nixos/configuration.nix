@@ -107,6 +107,7 @@
     gh # github
     tmux
     gcc
+    unzip
   ];
 
   # Enable modern nix features: nix-command and flakes
